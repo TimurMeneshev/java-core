@@ -12,6 +12,6 @@ public class Formatting {
 
         System.out.printf("%tc\n", new Date());
         System.out.printf("%1$s %2$tR %2$td.%2$tm.%2$ty", "Due date: ", new Date()); //использование индексов для аргументов
-
+        System.out.println("\n79222D38-A67A-47A9-8502-6AAD830DE84D".toLowerCase());
     }
 }
