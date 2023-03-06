@@ -1,7 +1,7 @@
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Employee extends Person {
+public class Employee extends Person implements Comparable<Employee> /*обобщенный интерфейс с параметром типа*/ {
     private int salary;
     private LocalDate hireDate;
 
@@ -59,5 +59,11 @@ public class Employee extends Person {
         System.out.println(employee.equals(employee1));
         System.out.println(String.format("Hash: %d  %d", employee1.hashCode(), employee.hashCode()));
         System.out.println(employee);
+
+    }
+
+    @Override
+    public int compareTo(Employee o) {
+        return Double.compare(this.getSalary(), o.getSalary());
     }
 }
