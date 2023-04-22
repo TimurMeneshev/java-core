@@ -14,7 +14,7 @@ public class AbstractExample {
 }
 
 abstract class Person {
-    private String name;
+    private final String name;
 
     public Person(String name) {
         Objects.requireNonNull(name, "Name cannot be null"); // обработка null
@@ -30,7 +30,7 @@ abstract class Person {
 }
 
 class Student extends Person {
-    private String major;
+    private final String major;
 
     public Student(String name, String major) {
         super(name);
