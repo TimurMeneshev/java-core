@@ -1,26 +1,22 @@
 package generics;
 
-import java.math.BigDecimal;
-import java.math.MathContext;
-import java.math.RoundingMode;
 
-public class Pair {
-    private static MathContext contextQty = new MathContext(8, RoundingMode.HALF_UP);
+public class Pair<T> {
+    private T first;
+    private T second;
 
-    public static BigDecimal adjustQty(BigDecimal value) {
-        if (value == null) return null;
-        value = value.round(contextQty);
-        //value = value.setScale(8, RoundingMode.HALF_UP);
-        return value;
-    }
+    public Pair() { first = null; second = null; }
+    public Pair(T first, T second) { this.first = first; this.second = second;}
+
+    public T getFirst() { return first; }
+    public T getSecond() { return second; }
+
+    public void setFirst(T newValue) { first = newValue; }
+    public void setSecond(T newValue) { second = newValue; }
 
     public static void main(String[] args) {
-        BigDecimal b = BigDecimal.valueOf(74.5633388555544);
+        Pair<String> p = new Pair<>("1", "2");
 
-        b = adjustQty(b);
-
-        System.out.println(b.toString());
-
+        System.out.println(p.getSecond());
     }
-
 }
