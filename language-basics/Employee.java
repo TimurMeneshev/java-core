@@ -2,7 +2,7 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 public class Employee extends Person implements Comparable<Employee> /*обобщенный интерфейс с параметром типа*/ {
-    private int salary;
+    private double salary;
     private LocalDate hireDate;
 
     public Employee(String name, int salary, LocalDate hireDate) {
@@ -16,7 +16,7 @@ public class Employee extends Person implements Comparable<Employee> /*обоб�
         return String.format("an employee with a salary of $%d", salary);
     }
 
-    public int getSalary() { return this.salary; }
+    public double getSalary() { return this.salary; }
     public LocalDate getHireDate() { return this.hireDate; }
 
     public void raiseSalary(double percent) {

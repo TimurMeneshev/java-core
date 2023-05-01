@@ -34,6 +34,8 @@ public class LoggingImageViewer {
             }
         }
 
+
+
         EventQueue.invokeLater(() -> {
                     Handler windowHandler = new WindowHandler();
                     windowHandler.setLevel(Level.ALL);
