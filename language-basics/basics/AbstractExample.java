@@ -1,12 +1,13 @@
 package basics;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
 public class AbstractExample {
     public static void main(String[] args) {
         Person[] people =  new Person[2];
-        people[0] = new Employee("Employee1", 50000, LocalDate.of(2019, 4, 5));
+        people[0] = new Employee("Employee1", 50000, 2019, 4, 5);
         people[1] = new Student("Student1", "computer science");
 
         for (Person p: people) {
@@ -15,7 +16,7 @@ public class AbstractExample {
     }
 }
 
-abstract class Person {
+abstract class Person implements Serializable {
     private final String name;
 
     public Person(String name) {

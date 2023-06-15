@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 public class ReflectionTest {
     public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchFieldException {
-        Employee e = new Employee("Name Surname", 100, LocalDate.of(2020, 03, 12));
+        Employee e = new Employee("Name Surname", 100, 2020, 03, 12);
         // три способа получить экземпляр типа Class
         Class cl1 = e.getClass();
         Class cl2 = Class.forName("basics.Employee");

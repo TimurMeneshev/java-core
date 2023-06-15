@@ -1,16 +1,20 @@
 package basics;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
 public class Employee extends Person implements Comparable<Employee> /*обобщенный интерфейс с параметром типа*/ {
+
+    public static final int NAME_SIZE = 40;
+    public static final int RECORD_SIZE = 2 * NAME_SIZE + 8 + 4 + 4 + 4;
     private double salary;
     private LocalDate hireDate;
 
-    public Employee(String name, int salary, LocalDate hireDate) {
+    public Employee(String name, double salary, int year, int month, int day) {
         super(name);
         this.salary = salary;
-        this.hireDate = hireDate;
+        this.hireDate = LocalDate.of(year, month, day);
     }
 
     @Override
@@ -53,11 +57,11 @@ public class Employee extends Person implements Comparable<Employee> /*обоб�
     }
 
     public static void main(String[] args) {
-        Employee employee = new Employee("Jack", 10000, LocalDate.of(2023, 1, 15) );
+        Employee employee = new Employee("Jack", 10000, 2023, 1, 15);
         System.out.println(employee.getName() + " "
         + employee.getSalary() + " " + employee.getHireDate());
 
-        Employee employee1 = new Employee("Jack", 10000, LocalDate.of(2023, 1, 15) );
+        Employee employee1 = new Employee("Jack", 10000, 2023, 1, 15);
         System.out.println(employee.equals(employee1));
         System.out.println(String.format("Hash: %d  %d", employee1.hashCode(), employee.hashCode()));
         System.out.println(employee);
